@@ -64,11 +64,7 @@ class Login extends Controller
     public function post(array $params): Response
     {
         if (isset($_POST['username']) === true && isset($_POST['password']) === true) {
-            if (isset($_POST['redirectUrl'])) {
-                $redirectUrl = urldecode(filter_var($_POST['redirectUrl'], FILTER_SANITIZE_URL));
-            } else {
-                $redirectUrl = '';
-            }
+            $redirectUrl = $this->authService->resolveSafeRedirect($_POST['redirectUrl'] ?? null);
 
             $username = trim($_POST['username']);
             $password = $_POST['password'];
