@@ -5,7 +5,8 @@
 
 {!! $tpl->displayNotification() !!}
 
-<form class="formModal" method="post" action="{{ BASE_URL }}/setting/editBoxLabel?{{ http_build_query(['module' => request()->query('module', ''), 'label' => request()->query('label', '')]) }}">
+<form class="formModal" method="post" action="{{ BASE_URL }}/setting/editBoxLabel?{{ http_build_query(['module' =>
+@csrf request()->query('module', ''), 'label' => request()->query('label', '')]) }}">
 
     <label>{!! __('label.label') !!}</label>
     <x-global::forms.text-input name="newLabel" value="{{ $currentLabel }}" /><br />

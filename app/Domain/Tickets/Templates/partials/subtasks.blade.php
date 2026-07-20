@@ -5,7 +5,8 @@
         <div class="ticketBox hideOnLoad" id="subticket_new" >
 
             <form method="post" class="form-group"
-                  hx-post="{{ BASE_URL }}/tickets/subtasks/save?ticketId={{ $ticket->id }}"
+                  hx-post="{{ BASE_URL }}/tickets/subtasks/save?ticketId={{ $ticket->
+            @csrfid }}"
                 hx-indicator=".htmx-indicator-small"
                 hx-target="#ticketSubtasks">
                 <input type="hidden" value="new" name="subtaskId" />

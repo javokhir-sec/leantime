@@ -23,7 +23,8 @@
 
 {!! $tpl->displayNotification() !!}
 
-<form class="formModal" method="post" action="{{ BASE_URL }}/tickets/editMilestone/{{ $currentMilestone->id }}" style="min-width: 250px;">
+<form class="formModal" method="post" action="{{ BASE_URL }}/tickets/editMilestone/{{ $currentMilestone->
+@csrfid }}" style="min-width: 250px;">
 
     <label>{!! __('label.milestone_title') !!}</label>
     <x-global::forms.text-input name="headline" value="{{ $currentMilestone->headline }}" placeholder="{{ __('label.milestone_title') }}" /><br />
